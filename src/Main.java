@@ -1,82 +1,76 @@
-
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NegativeValueException{
 
         System.out.println(" START");
-        try {
-            System.out.println(circle(-6.0, 11.0, 3.14));
-        } catch (NegativeValueException e) {
-            e.printMessage();
-            e.printStackTrace();
-            System.out.println("-6.0 radius, 11.0 high, pi 3.14");
-        }
         ArrayList<Double> circle = new ArrayList<>();
-        circle.add(-6.0);
-        circle.add(11.0);
-        circle.add(3.14);
-        System.out.println(circle);
-
         try {
-            System.out.println(circle(3.0, 11.0, 3.14));
-        } catch (NegativeValueException e2) {
-            e2.printMessage();
-            System.out.println("3.0 radius, 11.0 high, pi 3.14");
+            circle.add(-6.0);
+            circle.add(11.0);
+            circle.add(3.14);
+
+            throw new NegativeValueException(" ERROR -0.6");
+        } catch (NegativeValueException e) {
+            for (double d : circle) {
+                System.out.println(d);
+
+                e.printMessage();
+                e.printStackTrace();
+            }
         }
-        ArrayList<Double> circle2 = new ArrayList<>();
-        circle2.add(3.0);
-        circle2.add(11.0);
-        circle2.add(3.14);
-        System.out.println(circle2);
+            ArrayList<Double> circle2 = new ArrayList<>();
+            try {
+                circle2.add(3.0);
+                circle2.add(11.0);
+                circle2.add(3.14);
+                throw new NegativeValueException(" radius, high, pi is less tan 0");
+            } catch (NegativeValueException e2) {
+                for (double d : circle2) {
+                    System.out.println(d);
+                    e2.printMessage();
 
-        try {
-            System.out.println(circle(11.0, 11.0, 3.14));
-        } catch (NegativeValueException e3) {
-            e3.printMessage();
-            System.out.println("11.0 radius, 11.0 high, pi 3.14");
-        }
-        ArrayList<Double> circle3 = new ArrayList<>();
-        circle3.add(11.0);
-        circle3.add(11.0);
-        circle3.add(3.14);
-        System.out.println(circle3);
-        try{
-            System.out.println(circle(-5.0, 11.0, 3.14));
-        } catch (NegativeValueException e4){
-            e4.printMessage();
-            e4.printStackTrace();
-            System.out.println("-5.0 radius, 11.0 high, pi 3.14");
-        }
-        ArrayList<Double> circle4 = new ArrayList<>();
-        circle4.add(-5.0);
-        circle4.add(11.0);
-        circle4.add(3.14);
-        System.out.println(circle4);
-        try{
-            System.out.println(circle(22.0, 11.0, 3.14));
-        } catch (NegativeValueException e5){
-            e5.printMessage();
-            System.out.println("22.0 radius, 11.0 high, pi 3.14");
-        }
-        ArrayList<Double> circle5 = new ArrayList<>();
-        circle5.add(22.0);
-        circle5.add(11.0);
-        circle5.add(3.14);
-        System.out.println(circle5);
-    }
+                }
+            }
+                ArrayList<Double> circle3 = new ArrayList<>();
+                try {
+                    circle3.add(11.0);
+                    circle3.add(11.0);
+                    circle3.add(3.14);
+                    throw new NegativeValueException(" radius, high, pi is less tan 0");
+                } catch (NegativeValueException e3) {
+                    for (double d : circle3) {
+                        System.out.println(d);
+                        e3.printMessage();
+                    }
+                }
+                    ArrayList<Double> circle4 = new ArrayList<>();
+                    try {
+                        circle4.add(-5.0);
+                        circle4.add(11.0);
+                        circle4.add(3.14);
+                        throw new NegativeValueException(" ERROR -5.0 ");
+                    } catch (NegativeValueException e4) {
+                        for (double d : circle4) {
+                            System.out.println(d);
+                            e4.printMessage();
+                            e4.printStackTrace();
+                        }
+                    }
+                        ArrayList<Double> circle5 = new ArrayList<>();
+                        try {
+                            circle5.add(22.0);
+                            circle5.add(11.0);
+                            circle5.add(3.14);
+                            throw new NegativeValueException(" radius, high, pi is less tan 0");
+                        } catch (NegativeValueException e5) {
+                            for (double d : circle5) {
+                                System.out.println(d);
+                                e5.printMessage();
 
-    private static double circle(double radius, double high, double pi) throws NegativeValueException {
+                            }
 
-        throw new NegativeValueException(" double radius -6.0, double radius " +
-                " -5.0 - " + "NegativeValueException");
+                        }
 
-    }
-
-
-}
-
-
-
-
-
+                    }
+                }
