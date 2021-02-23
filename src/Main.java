@@ -32,7 +32,7 @@ public class Main {
 
                 double V = Math.PI * Math.pow(radius, 2) * height;
                 System.out.println( " result = " + V);
-                throw new NegativeValueException(" radius, high, pi is less tan 0");
+                throw new NegativeValueException();
             } catch (NegativeValueException e2) {
                 for (double i = 0; i < circle2.toArray().length; i++) {
                     System.out.println(circle2);
@@ -48,7 +48,7 @@ public class Main {
                     circle3.add(11.0);
                     double V = Math.PI * Math.pow(radius, 2) * height;
                     System.out.println( " result = " + V);
-                    throw new NegativeValueException(" radius, high, pi is less tan 0");
+                    throw new NegativeValueException();
                 } catch (NegativeValueException e3) {
                     for (double i = 0; i < circle3.toArray().length; i++) {
                         System.out.println(circle3);
@@ -79,7 +79,7 @@ public class Main {
                             circle5.add(11.0);
                             double V = Math.PI * Math.pow(radius, 2) * height;
                             System.out.println( " result = " + V);
-                            throw new NegativeValueException(" radius, high, pi is less tan 0");
+                            throw new NegativeValueException();
                         } catch (NegativeValueException e5) {
                             for (double i = 0; i < circle5.toArray().length; i++) {
                                 System.out.println(circle5);
